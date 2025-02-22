@@ -196,6 +196,8 @@ In the above line “GfG” is stored in a shared read-only location, but pointe
 ## ARRAYS
 * There is no index out of bounds checking in C++. But doing so may cause a Buffer Overflow (-: is an anomaly where a program, while writing data to a buffer, overruns the buffer's 
 boundary and overwrites adjacent memory locations.) and a Segmentation Fault (-: For an array int arr[] = {1,2,3,4,5} , cout<<arr[10] works fine and prints a garbage value but arr[10]=9 results in a segmentation fault (but sometime it modifies and if you print that index it will print (if memory are free if not then it will get crashed) coz it has not out bound check ) because the memory beyond the buffer's boundaries is read-only memory.)
+---Example
+  arr[13] = 19;   cout<< arr[13]; // it print 19 but question here come 13 index in an array is out of  bound then how it initiliazing the value there okay now we going to undrstand it just modifying or accesing  a adjacent memorey location if the memorey is free then its works  properly  but later also give us program crashed if  by chance it acces any data that there present so  what it just change the data and we face program crash problem
 
 * Array name indicates the address of the first element and arrays when passed to a function are always passed as pointers (even if we use square brackets).
 * Compiler uses pointer arithmetic to access array element. For example, an expression like “arr[i]” is treated as * (arr + i) by the compiler.
