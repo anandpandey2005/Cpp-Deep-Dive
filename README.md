@@ -195,7 +195,8 @@ In the above line “GfG” is stored in a shared read-only location, but pointe
 🟥🟩🟦 
 ## ARRAYS
 * There is no index out of bounds checking in C++. But doing so may cause a Buffer Overflow (-: is an anomaly where a program, while writing data to a buffer, overruns the buffer's 
-boundary and overwrites adjacent memory locations.) and a Segmentation Fault (-: For an array int arr[] = {1,2,3,4,5} , cout<<arr[10] works fine and prints a garbage value but arr[10]=9 results in a segmentation fault because the memory beyond the buffer's boundaries is read-only memory.)
+boundary and overwrites adjacent memory locations.) and a Segmentation Fault (-: For an array int arr[] = {1,2,3,4,5} , cout<<arr[10] works fine and prints a garbage value but arr[10]=9 results in a segmentation fault (but sometime it modifies and if you print that index it will print (if memory are free if not then it will get crashed) coz it has not out bound check ) because the memory beyond the buffer's boundaries is read-only memory.)
+
 * Array name indicates the address of the first element and arrays when passed to a function are always passed as pointers (even if we use square brackets).
 * Compiler uses pointer arithmetic to access array element. For example, an expression like “arr[i]” is treated as * (arr + i) by the compiler.
 * Array Decay-: The loss of type and dimensions of an array is known as decay of an array.This generally occurs when we pass the array to a function by value or by pointer. If you're passing an array by value, what you're really doing is copying a pointer - a pointer to the array's first element is copied to the parameter (whose type should also be the same as array element's type). This works due to array's decaying nature; once decayed, sizeof no longer gives the complete array's size, because it essentially becomes a pointer. A typical solution to handle decay is to send the array into functions by reference (int (&p)[7]).
